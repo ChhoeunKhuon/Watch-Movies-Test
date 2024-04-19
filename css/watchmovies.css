@@ -1,0 +1,384 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+body{
+    background-color:rgb(201, 197, 197);
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+    padding: 5px;
+    width: 100%;
+    margin: 5px auto;
+}
+.navbar .list{
+    display: inline;
+}
+.navbar .list .link{
+    text-decoration: none;
+    padding: 5px;
+    color: black;
+}
+.navbar .list .link:hover{
+    color: red;
+}
+.wrapper{
+    margin-top: 9px;
+}
+/* logo img */
+.logotop{
+    display: flex;
+    margin-left: -11rem;
+}
+.logo{
+    width: 40px;
+    height: 38px;
+}
+.logotxt{
+    margin-top: 6px;
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+}
+/* btn */
+.btn{
+    margin-top: 10px;
+}
+/* .loginbtn{
+    /* padding: 5px;
+    border-radius: 10px;
+    height: 30px;
+    border: 1px solid black;
+    color: white;
+    background-color: blue;
+    text-decoration: none;
+}
+.loginbtn:hover{
+    background-color: white;
+    color: rgba(184, 184, 247, 0.662);
+} */ */
+.login-logo{
+    color: black;
+    padding: 10px;
+    background-color: red;
+}
+/* search
+.inputclass{
+    text-align: center;
+    padding: 10px;
+    background-color: white;
+}
+.input{
+    padding: 6px;
+    width: 400px;
+    border-radius: 6px 0 0 6px;
+}
+.searchbtn{
+    padding: 6px;
+    border-radius: 0 6px 6px 0;
+    margin-left: -1px;
+}
+.searchbtn:hover{
+    border: 2px solid orange;
+    color: orange;
+} */
+/* slider img */
+.container{
+    position: relative;
+    margin: 1rem auto;
+}
+.container .slider{
+    width: 90vw;
+    height: 60vh;
+    margin: 0rem auto;
+    overflow: hidden;
+    cursor: pointer;
+    
+}
+.container .wrapper-holder{
+    display: grid;
+    grid-template-columns: repeat(4, 100%);
+    height: 100%;
+    width: 100%;
+    animation: slider 30s ease-in-out infinite;
+}
+.container #slider-img-1{
+    background-image: url(../Images/longWidth4.jpg);
+    background-position: center;
+    background-size: 200vh 100%;
+}
+.container #slider-img-2{
+    background-image: url(../Images/longWidth1.jpg);
+    background-position: center;
+    background-size: 200vh 100%;
+}
+.container #slider-img-3{
+    background-image: url(../Images/longWidth3.jpg);
+    background-position: center;
+    background-size: 200vh 100%;
+}
+.container #slider-img-4{
+    background-image: url(../Images/longWidth2.jpg);
+    background-position: center;
+}
+.container .button-holder .button{
+    background-color: white;
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    display: inline-block;
+    margin: .3rem;
+}
+.container .button-holder{
+    position: absolute;
+    left: 45%;
+    bottom: 0%;
+}
+.button:hover{
+    box-shadow: 0 0 7px 7px red;
+}
+@keyframes slider{
+    0%{
+        transform: translateX(0%);
+    }
+    10%{
+        transform: translateX(-100%);
+    }
+    20%{
+        transform: translateX(-100%);
+    }
+    30%{
+        transform: translateX(-200%);
+    }
+    40%{
+        transform: translateX(-200%);
+    }
+    50%{
+        transform: translateX(-200%);
+    }
+    60%{
+        transform: translateX(-300%);
+    }
+    70%{
+        transform: translateX(-300%);
+    }
+    80%{
+        transform: translateX(-300%);
+    }
+    90%{
+        transform: translateX(0%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}
+/* poopular slide */
+.hr{
+    margin: 1rem auto;
+    width: 80vw;
+}
+.popularmoviestxt{
+    font-family: Verdana;
+    margin-left: 10%;
+    background: linear-gradient(135deg, pink,orange,yellow,green,skyblue,blue,violet);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 300% 300%;
+    animation: autoColor 8s ease-in-out infinite;
+}
+@keyframes autoColor {
+    0%{
+        background-position: 0% 50%;
+    }
+    0%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+}
+/* video pop up */
+.containera{
+    position: relative;
+    min-height: 100vh;
+}
+.containera .video-container{
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc(100% / 3) -12px;
+    gap: 16px;
+    overflow: auto;
+    font-size: 0;
+    scrollbar-width: none;
+}
+.containera .video-container::-webkit-scrollbar{
+    display: none;
+}
+.containera .video-container .video{
+    height: 250px;
+    width: 200px;
+    border-radius: 1rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.8);
+    cursor: pointer;
+    overflow: hidden;
+}
+.containera .video-container .video video{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: .2s linear;
+}
+.containera .video-container .video:hover video{
+    transform: scale(1.1);
+
+} 
+.containera .popup-video{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background: rgba(0,0,0,0.8);
+    height: 100%;
+    width: 100%;
+    display: none;
+}
+.containera .popup-video video{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1400px;
+    height: 90%;
+    border-radius: 5px;
+    border: 3px solid white;
+    object-fit: cover;
+}
+.containera .popup-video span{
+    position: absolute;
+    top: 5%;
+    right: 20px;
+    color: white;
+    font-size: 50px;
+    font-weight: bolder;
+    z-index: 100;
+    cursor: pointer;
+}
+@media (max-width:768px){
+    .containera .popup-video video{
+        width: 90%;
+        height: 60%;
+    }
+} 
+/*slide button */
+.vdoslider{
+    max-width: 1200px;
+    position: relative;
+    margin: 0rem auto;
+}
+.vdoslider .slide-button{
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    color: black;
+    background-color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    top: 50%;
+    transform: translateY(-50%);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+}
+.vdoslider .slide-button:hover{
+    background-color: rgb(188, 186, 186);
+}
+.vdoslider .slide-button#prev-slide{
+    left: -20px;
+}
+.vdoslider .slide-button#next-slide{
+    right: -20px;
+}
+/* vdolist */
+.ctn .video-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: rgb(177, 175, 175);
+    width: 90%;
+    margin: 1rem auto;
+    border-radius: 6px;
+}
+.ctn .video-container .videoa{
+    height: 250px;
+    width: 200px;
+    margin: 2rem;
+    box-shadow:0 0.5rem 1rem rgba(0,0,0,0.5);
+    overflow: hidden;
+    border-radius: 1rem;
+}
+.ctn .video-container .videoa video{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: .2s linear;
+}
+.ctn .video-container .videoa:hover video{
+    transform: scale(1.1);
+}
+.ctn .video-container .videoa .active{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% -50%);
+    height: auto;
+    width: 80%;
+    box-shadow: 0 0 0 100vh rgba(0,0,0,0.7);
+    z-index: 1;
+}
+.ctn .video-container .videoa .active:hover{
+    transition: none;
+    transform: translate(-50% -50%) scale(1);
+}
+/* show more */
+.show-more{
+    text-align: center;
+    padding: 10px;
+}
+.show-more a{
+    color: red;
+    text-decoration: none;
+}
+.show-more a:hover{
+    color: rgb(134, 8, 8);
+}
+/* txt4k */
+.fourkctn{
+    text-align: center;
+}
+.txtfourkh{
+    color: red;
+    padding: 1rem;
+}
+.btnSub{
+    padding: 5px;
+    background-color: red;
+    color: white;
+    border-radius: 6px;
+    width: 250px;
+    border: none;
+}
+.btnSub:hover{
+    background-color: rgb(177, 3, 3);
+}
+.imgbottom{
+    transform: scale(1.1);
+}
+
